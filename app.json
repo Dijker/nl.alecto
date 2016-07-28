@@ -1,0 +1,175 @@
+{
+	"id": "nl.alecto",
+	"version": "1.1.0",
+	"compatibility": ">=0.9",
+	"category": "appliances",
+	"name": {
+		"en": "Alecto",
+		"nl": "Alecto"
+	},
+	"description": {
+		"en": "Give Homey the ability to communicate with Alecto devices",
+		"nl": "Laat Homey met Alecto devices praten"
+	},
+	"author": {
+		"name": "Athom B.V."
+	},
+	"images": {
+		"large": "./assets/images/large.png",
+		"small": "./assets/images/small.png"
+	},
+	"permissions": [
+		"homey:wireless:433"
+	],
+	"flow": {
+		"actions": [
+			{
+				"id": "triggerDoorbell",
+				"title": {
+					"en": "Ring the doorbell",
+					"nl": "Laat de deurbel af gaan"
+				},
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=doorbell",
+						"placeholder": {
+							"en": "Which doorbell?",
+							"nl": "Welke deurbel?"
+						}
+					}
+				]
+			}
+		]
+	},
+	"drivers": [
+		{
+			"id": "doorbell",
+			"name": {
+				"en": "Alecto doorbell",
+				"nl": "Alecto deurbel"
+			},
+			"images": {
+				"large": "./drivers/doorbell/assets/images/large.png",
+				"small": "./drivers/doorbell/assets/images/small.png"
+			},
+			"class": "button",
+			"capabilities": [
+				"onoff"
+			],
+			"pair": [
+				{
+					"id": "imitate1"
+				},
+				{
+					"id": "done"
+				}
+			]
+		}
+	],
+	"signals": {
+		"433": {
+			"alecto_1": {
+				"eof": [
+					170
+				],
+				"words": [
+					[
+						170,
+						740
+					],
+					[
+						620,
+						280
+					]
+				],
+				"interval": 7000,
+				"sensitivity": 0.3,
+				"repetitions": 20,
+				"minimalLength": 24,
+				"maximalLength": 24
+			},
+			"alecto_2_0": {
+				"sof": [
+					1030
+				],
+				"words": [
+					[
+						1130,
+						340
+					],
+					[
+						400,
+						1070
+					]
+				],
+				"interval": 5860,
+				"sensitivity": 0.3,
+				"repetitions": 20,
+				"minimalLength": 17,
+				"maximalLength": 17
+			},
+			"alecto_2_1": {
+				"sof": [
+					340
+				],
+				"words": [
+					[
+						1130,
+						340
+					],
+					[
+						400,
+						1070
+					]
+				],
+				"interval": 5860,
+				"sensitivity": 0.3,
+				"repetitions": 20,
+				"minimalLength": 17,
+				"maximalLength": 17
+			},
+			"alecto_3": {
+				"eof": [
+					225
+				],
+				"words": [
+					[
+						225,
+						700
+					],
+					[
+						700,
+						240
+					]
+				],
+				"interval": 7215,
+				"sensitivity": 0.3,
+				"repetitions": 20,
+				"minimalLength": 24,
+				"maximalLength": 24
+			},
+			"alecto_4": {
+				"eof": [
+					170
+				],
+				"words": [
+					[
+						170,
+						500
+					],
+					[
+						500,
+						175
+					]
+				],
+				"interval": 5200,
+				"sensitivity": 0.3,
+				"repetitions": 20,
+				"minimalLength": 24,
+				"maximalLength": 24
+			}
+		}
+	}
+}

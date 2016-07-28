@@ -1,0 +1,10 @@
+{
+    "doorbell": "Alecto doorbell",
+
+    "pair": {
+        "title":{
+            "doorbell": "Pair an Alecto doorbell..."
+        },
+    	"imitate1": "Activate your doorbell"
+    }
+}
