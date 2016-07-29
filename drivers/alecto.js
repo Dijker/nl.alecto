@@ -14,6 +14,33 @@ var Alecto_2_1;
 var Alecto_3;
 var Alecto_4;
 
+Signal.numberToBitArray = function(number, bit_count) {
+	var result = [];
+	for (var i = 0; i < bit_count; i++)
+		result[i] = (number >> i) & 1;
+	return result;
+};
+
+Signal.bitArrayToNumber = function(bits) {
+	return parseInt(bits.join(""),2);
+};
+
+Signal.bitStringToBitArray = function(str) {
+	var result = [];
+	for (var i = 0; i < str.length; i++)
+		result.push(str.charAt(i) == '1' ? 1 : 0);
+	return result;
+};
+
+Signal.bitArrayToString = function(bits) {
+	return bits.join("");
+};
+
+Signal.register(function( err, success ){
+	if(err != null)	console.log('Alecto_2_0: Error:', err, 'success:', success);
+	else signalRegisterDoneFlags[1] = 1;
+});
+
 function createDriver(driver) {
 	var self = {
 		init: function( devices, callback ) {
@@ -186,33 +213,6 @@ module.exports = {
 
 function initAlecto_1(self){ //ADB-18
 	Alecto_1 = new Signal('alecto_1');
-
-	Alecto_1.numberToBitArray = function(number, bit_count) {
-		var result = [];
-		for (var i = 0; i < bit_count; i++)
-			result[i] = (number >> i) & 1;
-		return result;
-	};
-
-	Alecto_1.bitArrayToNumber = function(bits) {
-		return parseInt(bits.join(""),2);
-	};
-
-	Alecto_1.bitStringToBitArray = function(str) {
-		var result = [];
-		for (var i = 0; i < str.length; i++)
-			result.push(str.charAt(i) == '1' ? 1 : 0);
-		return result;
-	};
-
-	Alecto_1.bitArrayToString = function(bits) {
-		return bits.join("");
-	};
-
-	Alecto_1.register(function( err, success ){
-	    if(err != null) console.log('Alecto_1: Error:', err, 'success:', success);
-	    else signalRegisterDoneFlags[0] = 1;
-	});
 	
 	//Start receiving
 	Alecto_1.on('payload', function(payload, first){
@@ -234,33 +234,6 @@ function initAlecto_1(self){ //ADB-18
 
 function initAlecto_2_0(self){ //ADB-17 + ADB-15
 	Alecto_2_0 = new Signal('alecto_2_0');
-
-	Alecto_2_0.numberToBitArray = function(number, bit_count) {
-		var result = [];
-		for (var i = 0; i < bit_count; i++)
-			result[i] = (number >> i) & 1;
-		return result;
-	};
-
-	Alecto_2_0.bitArrayToNumber = function(bits) {
-		return parseInt(bits.join(""),2);
-	};
-
-	Alecto_2_0.bitStringToBitArray = function(str) {
-		var result = [];
-		for (var i = 0; i < str.length; i++)
-			result.push(str.charAt(i) == '1' ? 1 : 0);
-		return result;
-	};
-
-	Alecto_2_0.bitArrayToString = function(bits) {
-		return bits.join("");
-	};
-
-	Alecto_2_0.register(function( err, success ){
-	    if(err != null)	console.log('Alecto_2_0: Error:', err, 'success:', success);
-	    else signalRegisterDoneFlags[1] = 1;
-	});
 	
 	//Start receiving
 	Alecto_2_0.on('payload', function(payload, first){
@@ -284,33 +257,6 @@ function initAlecto_2_0(self){ //ADB-17 + ADB-15
 function initAlecto_2_1(self){ //ADB-17 + ADB-15
 	Alecto_2_1 = new Signal('alecto_2_1');
 
-	Alecto_2_1.numberToBitArray = function(number, bit_count) {
-		var result = [];
-		for (var i = 0; i < bit_count; i++)
-			result[i] = (number >> i) & 1;
-		return result;
-	};
-
-	Alecto_2_1.bitArrayToNumber = function(bits) {
-		return parseInt(bits.join(""),2);
-	};
-
-	Alecto_2_1.bitStringToBitArray = function(str) {
-		var result = [];
-		for (var i = 0; i < str.length; i++)
-			result.push(str.charAt(i) == '1' ? 1 : 0);
-		return result;
-	};
-
-	Alecto_2_1.bitArrayToString = function(bits) {
-		return bits.join("");
-	};
-
-	Alecto_2_1.register(function( err, success ){
-	    if(err != null) console.log('Alecto_2_1: Error:', err, 'success:', success);
-	    else signalRegisterDoneFlags[2] = 1;
-	});
-	
 	//Start receiving
 	Alecto_2_1.on('payload', function(payload, first){
 		payload = Signal.bitArrayToString(payload);
@@ -336,33 +282,6 @@ function initAlecto_2_1(self){ //ADB-17 + ADB-15
 function initAlecto_3(self){ // ADB-12
 	Alecto_3 = new Signal('alecto_3');
 
-	Alecto_3.numberToBitArray = function(number, bit_count) {
-		var result = [];
-		for (var i = 0; i < bit_count; i++)
-			result[i] = (number >> i) & 1;
-		return result;
-	};
-
-	Alecto_3.bitArrayToNumber = function(bits) {
-		return parseInt(bits.join(""),2);
-	};
-
-	Alecto_3.bitStringToBitArray = function(str) {
-		var result = [];
-		for (var i = 0; i < str.length; i++)
-			result.push(str.charAt(i) == '1' ? 1 : 0);
-		return result;
-	};
-
-	Alecto_3.bitArrayToString = function(bits) {
-		return bits.join("");
-	};
-
-	Alecto_3.register(function( err, success ){
-	    if(err != null) console.log('Alecto_3: Error:', err, 'success:', success);
-	    else signalRegisterDoneFlags[3] = 1;
-	});
-	
 	//Start receiving
 	Alecto_3.on('payload', function(payload, first){
 		payload = Signal.bitArrayToString(payload);
@@ -384,33 +303,6 @@ function initAlecto_3(self){ // ADB-12
 
 function initAlecto_4(self){ //ADB-16
 	Alecto_4 = new Signal('alecto_4');
-
-	Alecto_4.numberToBitArray = function(number, bit_count) {
-		var result = [];
-		for (var i = 0; i < bit_count; i++)
-			result[i] = (number >> i) & 1;
-		return result;
-	};
-
-	Alecto_4.bitArrayToNumber = function(bits) {
-		return parseInt(bits.join(""),2);
-	};
-
-	Alecto_4.bitStringToBitArray = function(str) {
-		var result = [];
-		for (var i = 0; i < str.length; i++)
-			result.push(str.charAt(i) == '1' ? 1 : 0);
-		return result;
-	};
-
-	Alecto_4.bitArrayToString = function(bits) {
-		return bits.join("");
-	};
-
-	Alecto_4.register(function( err, success ){
-	    if(err != null) console.log('Alecto_4: Error:', err, 'success:', success);
-	    else signalRegisterDoneFlags[4] = 1;
-	});
 	
 	//Start receiving
 	Alecto_4.on('payload', function(payload, first){
