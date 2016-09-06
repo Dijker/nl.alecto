@@ -1,10 +1,181 @@
 {
-    "doorbell": "Alecto doorbell",
-
-    "pair": {
-        "title":{
-            "doorbell": "Pair an Alecto doorbell..."
-        },
-    	"imitate1": "Activate your doorbell"
-    }
+	"doorbell": "Alecto doorbell",
+	"pair": {
+		"title": {
+			"doorbell": "Pair an Alecto doorbell..."
+		},
+		"imitate1": "Activate your doorbell"
+	},
+	"deviceClasses": {
+		"doorbell": {
+			"views": {
+				"jumpers_choice": {
+					"title": "Copy signal from your doorbell button or set the jumpers manually",
+					"buttons": {
+						"generic_imitate": "Copy doorbell button",
+						"generic_dipswitch": "Set the jumpers"
+					},
+					"body": "Choose if you want to copy the signal from your doorbell button or want to manually set the jumper arrangement from your doorbell receiver"
+				},
+				"generic_choice": {
+					"body": "Choose if you want to copy the signal from your doorbell button or want to pair your doorbell receiver with Homey.",
+					"title": "Copy signal from your doorbell button or set the pair your receiver",
+					"buttons": {
+						"generic_imitate": "Copy doorbell button",
+						"generic_dipswitch": "Set the dipswitches"
+					}
+				},
+				"jumpers_info": {
+					"title": "Locate the jumpers on your doorbell receiver",
+					"body": "Locate the jumpers on your doorbell receiver like displayed above, then click next."
+				},
+				"jumpers": {
+					"title": "Set the jumpers of the device",
+					"body": "Click on the switches above so that they correspond with the jumpers on your doorbell receiver. <br/>If the pins have a jumper, the corresponding switch (which has the same number) should be up. If there is no jumper on the pins the switch should be down. <br/>Click next if the switches above correspond to all jumpers on the device."
+				},
+				"generic_imitate": {
+					"body": "Press your doorbell button to copy the signal.",
+					"title": "Copy your doorbell button signal"
+				},
+				"generic_test_button": {
+					"title": "Test your doorbell",
+					"body": "Click the button above to test your doorbell, click next to continue."
+				},
+				"generic_test_button_2": {
+					"body": "Click your doorbell button or the button above to test your doorbell, click next to continue."
+				},
+				"generic_program": {
+					"body": "Press and hold the pair button on your receiver, click next and immediately release the button after the doorbell rings."
+				}
+			},
+			"triggers": {
+				"received": {
+					"title": "Doorbell button is pressed"
+				},
+				"send": {
+					"title": "Trigger doorbell"
+				}
+			},
+			"settings": {
+				"groups": {
+					"general": "General"
+				},
+				"sounds": {
+					"0": "Für Elise",
+					"1": "Westminster bell",
+					"2": "Ding Dong 1",
+					"3": "Ding Dong 2"
+				},
+				"sound": "Doorbell sound"
+			}
+		},
+		"dipswitch_doorbell": {
+			"views": {
+				"generic_choice": {
+					"body": "Choose if you want to copy the signal from your doorbell button or want to manually set the dipswitches from your doorbell receiver.",
+					"title": "Copy signal from your doorbell button or set the dipswitches manually"
+				},
+				"generic_info": {
+					"title": "Locate the dipswitches on your doorbell receiver",
+					"body": "Locate the dipswitches on your doorbell receiver like displayed above, then click next."
+				}
+			}
+		},
+		"generic_switch": {
+			"views": {
+				"generic_choice": {
+					"buttons": {
+						"generic_program": "Generate a new signal\u0000"
+					}
+				}
+			}
+		}
+	},
+	"views": {
+		"generic_imitate": {
+			"title": "Copy your remote signal\u0000"
+		},
+		"generic_program": {
+			"title": "Pair your device with Homey\u0000"
+		},
+		"generic_done": {
+			"title": "Adding device!\u0000"
+		},
+		"generic_test_switch": {
+			"title": "Test your device\u0000",
+			"body": "Use the switch above to test your device. Press next to continue.\u0000"
+		},
+		"generic_test_switch_2": {
+			"body": "Use your remote or the switch above to test your device. Press next to continue.\u0000"
+		},
+		"generic_dipswitch": {
+			"title": "Set dipswitches of device\u0000",
+			"body": "Click on the dipswitches above to put them in the same arrangement as those of your device, then click next.\u0000"
+		}
+	},
+	"433_generator": {
+		"generic": {
+			"on": "On\u0000",
+			"off": "Off\u0000",
+			"left": "Left\u0000",
+			"middle": "Middle\u0000",
+			"right": "Right\u0000",
+			"up": "Up\u0000",
+			"down": "Down\u0000",
+			"button_pressed": "Button is pressed\u0000",
+			"buttons": {
+				"1": "Button 1\u0000",
+				"2": "Button 2\u0000",
+				"3": "Button 3\u0000",
+				"4": "Button 4\u0000",
+				"5": "Button 5\u0000",
+				"A": "Button A\u0000",
+				"B": "Button B\u0000",
+				"C": "Button C\u0000",
+				"D": "Button D\u0000",
+				"E": "Button E\u0000",
+				"G": "Group Button\u0000",
+				"all": "All Button\u0000",
+				"bright": "Bright Button\u0000",
+				"dim": "Dim Button\u0000",
+				"left": "Left Button\u0000",
+				"middle": "Middle Button\u0000",
+				"right": "Right Button\u0000"
+			},
+			"channels": {
+				"1": "Channel 1\u0000",
+				"2": "Channel 2\u0000",
+				"3": "Channel 3\u0000",
+				"4": "Channel 4\u0000",
+				"5": "Channel 5\u0000",
+				"I": "Channel I\u0000",
+				"II": "Channel II\u0000",
+				"III": "Channel III\u0000",
+				"IV": "Channel IV\u0000",
+				"V": "Channel V\u0000",
+				"A": "Channel A\u0000",
+				"B": "Channel B\u0000",
+				"C": "Channel C\u0000",
+				"D": "Channel D\u0000",
+				"E": "Channel E\u0000"
+			}
+		},
+		"error": {
+			"device_exists": "This device is already paired with Homey.\u0000",
+			"no_device": "No device set to pair. Please close the pairing wizard and try again.\u0000",
+			"no_settings": "No settings object. Please try again.\u0000",
+			"invalid_device": "The device that was created is invalid. Please try again.\u0000"
+		}
+	},
+	"devices": {
+		"adb-12": {
+			"name": "ADB-12"
+		},
+		"adb-18": {
+			"name": "ADB-18"
+		},
+		"adb-17": {
+			"name": "ADB-17"
+		}
+	}
 }

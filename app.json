@@ -1,175 +1,511 @@
 {
-	"id": "nl.alecto",
-	"version": "1.1.2",
-	"compatibility": ">=0.9",
-	"category": "appliances",
-	"name": {
-		"en": "Alecto",
-		"nl": "Alecto"
-	},
-	"description": {
-		"en": "Give Homey the ability to communicate with Alecto devices",
-		"nl": "Laat Homey met Alecto devices praten"
-	},
-	"author": {
-		"name": "Athom B.V."
-	},
-	"images": {
-		"large": "./assets/images/large.png",
-		"small": "./assets/images/small.png"
-	},
-	"permissions": [
-		"homey:wireless:433"
-	],
-	"flow": {
-		"actions": [
-			{
-				"id": "triggerDoorbell",
-				"title": {
-					"en": "Ring the doorbell",
-					"nl": "Laat de deurbel af gaan"
-				},
-				"args": [
-					{
-						"name": "device",
-						"type": "device",
-						"filter": "driver_id=doorbell",
-						"placeholder": {
-							"en": "Which doorbell?",
-							"nl": "Welke deurbel?"
-						}
-					}
-				]
-			}
-		]
-	},
-	"drivers": [
-		{
-			"id": "doorbell",
-			"name": {
-				"en": "Alecto doorbell",
-				"nl": "Alecto deurbel"
-			},
-			"images": {
-				"large": "./drivers/doorbell/assets/images/large.png",
-				"small": "./drivers/doorbell/assets/images/small.png"
-			},
-			"class": "button",
-			"capabilities": [
-				"onoff"
-			],
-			"pair": [
-				{
-					"id": "imitate1"
-				},
-				{
-					"id": "done"
-				}
-			]
-		}
-	],
-	"signals": {
-		"433": {
-			"alecto_1": {
-				"eof": [
-					170
-				],
-				"words": [
-					[
-						170,
-						740
-					],
-					[
-						620,
-						280
-					]
-				],
-				"interval": 7000,
-				"sensitivity": 0.3,
-				"repetitions": 20,
-				"minimalLength": 24,
-				"maximalLength": 24
-			},
-			"alecto_2_0": {
-				"sof": [
-					1030
-				],
-				"words": [
-					[
-						1130,
-						340
-					],
-					[
-						400,
-						1070
-					]
-				],
-				"interval": 5860,
-				"sensitivity": 0.3,
-				"repetitions": 20,
-				"minimalLength": 17,
-				"maximalLength": 17
-			},
-			"alecto_2_1": {
-				"sof": [
-					340
-				],
-				"words": [
-					[
-						1130,
-						340
-					],
-					[
-						400,
-						1070
-					]
-				],
-				"interval": 5860,
-				"sensitivity": 0.3,
-				"repetitions": 20,
-				"minimalLength": 17,
-				"maximalLength": 17
-			},
-			"alecto_3": {
-				"eof": [
-					225
-				],
-				"words": [
-					[
-						225,
-						700
-					],
-					[
-						700,
-						240
-					]
-				],
-				"interval": 7215,
-				"sensitivity": 0.3,
-				"repetitions": 20,
-				"minimalLength": 24,
-				"maximalLength": 24
-			},
-			"alecto_4": {
-				"eof": [
-					170
-				],
-				"words": [
-					[
-						170,
-						500
-					],
-					[
-						500,
-						175
-					]
-				],
-				"interval": 5200,
-				"sensitivity": 0.3,
-				"repetitions": 20,
-				"minimalLength": 24,
-				"maximalLength": 24
-			}
-		}
-	}
+  "id": "nl.alecto",
+  "version": "2.0.0",
+  "compatibility": ">=0.9",
+  "category": "appliances",
+  "name": {
+    "en": "Alecto",
+    "nl": "Alecto"
+  },
+  "description": {
+    "en": "Give Homey the ability to communicate with Alecto devices",
+    "nl": "Laat Homey met Alecto devices praten"
+  },
+  "author": {
+    "name": "Athom B.V."
+  },
+  "images": {
+    "large": "./assets/images/large.png",
+    "small": "./assets/images/small.png"
+  },
+  "permissions": [
+    "homey:wireless:433"
+  ],
+  "signals": {
+    "433": {
+      "alecto_1": {
+        "sof": [
+          340
+        ],
+        "words": [
+          [
+            1130,
+            340
+          ],
+          [
+            400,
+            1070
+          ]
+        ],
+        "interval": 5860,
+        "sensitivity": 0.3,
+        "repetitions": 20,
+        "minimalLength": 17,
+        "maximalLength": 17
+      },
+      "alecto_2_0": {
+        "sof": [
+          1030
+        ],
+        "words": [
+          [
+            1130,
+            340
+          ],
+          [
+            400,
+            1070
+          ]
+        ],
+        "interval": 5860,
+        "sensitivity": 0.3,
+        "repetitions": 20,
+        "minimalLength": 17,
+        "maximalLength": 17
+      },
+      "alecto_2_1": {
+        "sof": [
+          340
+        ],
+        "words": [
+          [
+            1130,
+            340
+          ],
+          [
+            400,
+            1070
+          ]
+        ],
+        "interval": 5860,
+        "sensitivity": 0.3,
+        "repetitions": 20,
+        "minimalLength": 17,
+        "maximalLength": 17
+      },
+      "alecto_3": {
+        "eof": [
+          225
+        ],
+        "words": [
+          [
+            225,
+            700
+          ],
+          [
+            700,
+            240
+          ]
+        ],
+        "interval": 7215,
+        "sensitivity": 0.3,
+        "repetitions": 20,
+        "minimalLength": 24,
+        "maximalLength": 24
+      },
+      "alecto_4": {
+        "eof": [
+          170
+        ],
+        "words": [
+          [
+            170,
+            500
+          ],
+          [
+            500,
+            175
+          ]
+        ],
+        "interval": 5200,
+        "sensitivity": 0.3,
+        "repetitions": 20,
+        "minimalLength": 24,
+        "maximalLength": 24
+      },
+      "alecto_2": {
+        "eof": [
+          225
+        ],
+        "words": [
+          [
+            225,
+            700
+          ],
+          [
+            700,
+            240
+          ]
+        ],
+        "interval": 7215,
+        "sensitivity": 0.3,
+        "repetitions": 20,
+        "minimalLength": 24,
+        "maximalLength": 24
+      }
+    }
+  },
+  "drivers": [
+    {
+      "id": "adb-12",
+      "name": {
+        "en": "ADB-12"
+      },
+      "class": "doorbell",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "images": {
+        "small": "./433_generator/assets/adb-12/images/small.jpg",
+        "large": "./433_generator/assets/adb-12/images/large.jpg"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General",
+            "nl": "Algemeen"
+          },
+          "children": [
+            {
+              "id": "sound",
+              "type": "dropdown",
+              "value": "11000000",
+              "label": {
+                "en": "Doorbell sound",
+                "nl": "Deurbel geluid"
+              },
+              "values": [
+                {
+                  "id": "11000000",
+                  "label": {
+                    "en": "Ding Dong 1"
+                  }
+                },
+                {
+                  "id": "00001100",
+                  "label": {
+                    "en": "Ding Dong 2"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_button_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_info",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_dipswitch"
+          }
+        },
+        {
+          "id": "generic_dipswitch",
+          "navigation": {
+            "prev": "generic_info",
+            "next": "generic_test_button"
+          }
+        },
+        {
+          "id": "generic_test_button",
+          "navigation": {
+            "prev": "generic_dipswitch",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "adb-17",
+      "name": {
+        "en": "ADB-17"
+      },
+      "class": "doorbell",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "images": {
+        "small": "./433_generator/assets/adb-17/images/small.jpg",
+        "large": "./433_generator/assets/adb-17/images/large.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_button_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_program",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_test_button"
+          }
+        },
+        {
+          "id": "generic_test_button",
+          "navigation": {
+            "prev": "generic_program",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "adb-18",
+      "name": {
+        "en": "ADB-18"
+      },
+      "class": "doorbell",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "images": {
+        "small": "./433_generator/assets/adb-18/images/small.jpg",
+        "large": "./433_generator/assets/adb-18/images/large.jpg"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General",
+            "nl": "Algemeen"
+          },
+          "children": [
+            {
+              "id": "sound",
+              "type": "dropdown",
+              "value": "11000000",
+              "label": {
+                "en": "Doorbell sound",
+                "nl": "Deurbel geluid"
+              },
+              "values": [
+                {
+                  "id": "00000011",
+                  "label": {
+                    "en": "Für Elise"
+                  }
+                },
+                {
+                  "id": "00001100",
+                  "label": {
+                    "en": "Westminster bell"
+                  }
+                },
+                {
+                  "id": "00110000",
+                  "label": {
+                    "en": "Ding Dong 1"
+                  }
+                },
+                {
+                  "id": "11000000",
+                  "label": {
+                    "en": "Ding Dong 2"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "pair": [
+        {
+          "id": "generic_choice",
+          "navigation": {}
+        },
+        {
+          "id": "generic_imitate",
+          "navigation": {
+            "prev": "generic_choice"
+          }
+        },
+        {
+          "id": "generic_test_button_2",
+          "navigation": {
+            "prev": "generic_imitate",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_info",
+          "navigation": {
+            "prev": "generic_choice",
+            "next": "generic_dipswitch"
+          }
+        },
+        {
+          "id": "generic_dipswitch",
+          "navigation": {
+            "prev": "generic_info",
+            "next": "generic_test_button"
+          }
+        },
+        {
+          "id": "generic_test_button",
+          "navigation": {
+            "prev": "generic_dipswitch",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "doorbell",
+      "name": {
+        "en": "Alecto doorbell",
+        "nl": "Alecto deurbel"
+      },
+      "images": {
+        "large": "./drivers/doorbell/assets/images/large.png",
+        "small": "./drivers/doorbell/assets/images/small.png"
+      },
+      "class": "button",
+      "capabilities": [
+        "onoff"
+      ],
+      "pair": [
+        {
+          "id": "imitate1"
+        },
+        {
+          "id": "done"
+        }
+      ]
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "adb-12:received",
+        "title": {
+          "en": "Doorbell button is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=adb-12"
+          }
+        ]
+      },
+      {
+        "id": "adb-17:received",
+        "title": {
+          "en": "Doorbell button is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=adb-17"
+          }
+        ]
+      },
+      {
+        "id": "adb-18:received",
+        "title": {
+          "en": "Doorbell button is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=adb-18"
+          }
+        ]
+      }
+    ],
+    "conditions": [],
+    "actions": [
+      {
+        "id": "adb-12:send",
+        "title": {
+          "en": "Trigger doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=adb-12"
+          }
+        ]
+      },
+      {
+        "id": "adb-17:send",
+        "title": {
+          "en": "Trigger doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=adb-17"
+          }
+        ]
+      },
+      {
+        "id": "adb-18:send",
+        "title": {
+          "en": "Trigger doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=adb-18"
+          }
+        ]
+      }
+    ]
+  }
 }

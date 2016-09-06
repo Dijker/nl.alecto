@@ -1,10 +1,171 @@
 {
-    "doorbell": "Alecto deurbel",
-
-    "pair": {
-        "title":{
-            "doorbell": "Koppel een Alecto deurbel..." 
-        },
-        "imitate1": "Activeer je deurbel"
-    }
+	"doorbell": "Alecto deurbel",
+	"pair": {
+		"title": {
+			"doorbell": "Koppel een Alecto deurbel..."
+		},
+		"imitate1": "Activeer je deurbel"
+	},
+	"deviceClasses": {
+		"doorbell": {
+			"views": {
+				"jumpers_choice": {
+					"title": "Kopiëer signaal van deurbel knop of stel handmatig de jumpers in",
+					"buttons": {
+						"generic_imitate": "Kopiëer deurbel knop",
+						"generic_dipswitch": "Stel jumpers in"
+					},
+					"body": "Kies of je het signaal van de deurbel knop wil kopiëren of handmatig de jumpers van de deurbel ontvanger wilt invoeren."
+				},
+				"generic_choice": {
+					"body": "Kies of je het signaal van je deurbel knop wil kopiëren of de ontvanger wilt koppelen met Homey.",
+					"title": "Kopiëer signaal van deurbel knop of koppel receiver met Homey",
+					"buttons": {
+						"generic_imitate": "Kopiëer deurbel knop",
+						"generic_dipswitch": "Stel jumpers in"
+					}
+				},
+				"jumpers_info": {
+					"title": "Vind de jumpers op je deurbel ontvanger",
+					"body": "Vind de jumpers op je deurbel ontvanger zoals hierboven aangegeven, klik daarna op volgende."
+				},
+				"jumpers": {
+					"title": "Stel de jumpers van de ontanger in",
+					"body": "Klik op de bovenstaande schakelaars zodat ze corresponderen met de jumpers op je deurbel ontvanger. <br/>Wanneer op de pinnen een jumper zit moet de corresponderende schakelaar (met hetzelfde nummer) omhoog staan. Wanneer er geen jumper op de pinnen zit moet de schakelaar omlaag staan. <br/>Klik op volgende wanneer de schakelaars corresponderen met alle jumpers op de ontvanger."
+				},
+				"generic_imitate": {
+					"body": "Druk op je deurbel knop om het signaal te kopiëren.",
+					"title": "Kopiëer het signaal van de deurbel knop"
+				},
+				"generic_test_button": {
+					"title": "Test je deurbel",
+					"body": "Klik op de bovenstaande knop om de deurbel te testen, klik op volgende om verder te gaan."
+				},
+				"generic_test_button_2": {
+					"body": "Klik op je deurbel knop of de bovenstaande knop om je deurbel te testen, klik op volgende om verder te gaan."
+				},
+				"generic_program": {
+					"body": "Houd de pair knop op je deurbel ontvanger ingedrukt, klik op volgende en laat direct nadat de deurbel afgaat de knop los."
+				}
+			},
+			"triggers": {
+				"received": {
+					"title": "Deurbel knop is ingedrukt"
+				},
+				"send": {
+					"title": "Laat deurbel afgaan"
+				}
+			},
+			"settings": {
+				"groups": {
+					"general": "Algemeen"
+				},
+				"sound": "Deurbel geluid",
+				"sounds": {
+					"0": null,
+					"1": null,
+					"2": null,
+					"3": null
+				}
+			}
+		},
+		"dipswitch_doorbell": {
+			"views": {
+				"generic_choice": {
+					"body": "Kies of je het signaal van je deurbel knop wil kopiëren of dat je handmatig de dipswitches van de deurbel ontvanger wil instellen.",
+					"title": "Kopiëer deurbel knop signaal of stel dipswitches handmatig in"
+				},
+				"generic_info": {
+					"title": "Vind de dipswitches op je deurbel ontvanger",
+					"body": "Vind de dipswitches op je deurbel ontvanger zoals hierboven aangegeven, klik daarna op volgende."
+				}
+			}
+		},
+		"generic_switch": {
+			"views": {
+				"generic_choice": {
+					"buttons": {
+						"generic_program": "Genereer een nieuw signaal\u0000"
+					}
+				}
+			}
+		}
+	},
+	"views": {
+		"generic_done": {
+			"title": "Apparaat wordt toegevoegd!\u0000"
+		},
+		"generic_program": {
+			"title": "Programmeer je apparaat met Homey\u0000"
+		},
+		"generic_dipswitch": {
+			"title": "Stel de dipswitches van je apparaat in\u0000",
+			"body": "Klik op de bovenstaande dipswitches om ze gelijk aan de dipswitches van je apparaat in te stellen, klik daarna op volgende.\u0000"
+		}
+	},
+	"devices": {
+		"adb-12": {
+			"name": null
+		},
+		"adb-17": {
+			"name": null
+		},
+		"adb-18": {
+			"name": null
+		}
+	},
+	"433_generator": {
+		"generic": {
+			"on": "Aan\u0000",
+			"off": "Uit\u0000",
+			"left": "Links\u0000",
+			"middle": "Midden\u0000",
+			"right": "Rechts\u0000",
+			"up": "Up\u0000",
+			"down": "Down\u0000",
+			"button_pressed": "Knop is ingedrukt\u0000",
+			"buttons": {
+				"1": "Knop 1\u0000",
+				"2": "Knop 2\u0000",
+				"3": "Knop 3\u0000",
+				"4": "Knop 4\u0000",
+				"5": "Knop 5\u0000",
+				"A": "Knop A\u0000",
+				"B": "Knop B\u0000",
+				"C": "Knop C\u0000",
+				"D": "Knop D\u0000",
+				"E": "Knop E\u0000",
+				"G": "Groep Knop\u0000",
+				"all": "All Knop\u0000",
+				"bright": "Fel Knop\u0000",
+				"dim": "Gedimt Knop\u0000",
+				"left": "Linker Knop\u0000",
+				"middle": "Middelste Knop\u0000",
+				"right": "Rechter Knop\u0000"
+			},
+			"channels": {
+				"1": "Kanaal 1\u0000",
+				"2": "Kanaal 2\u0000",
+				"3": "Kanaal 3\u0000",
+				"4": "Kanaal 4\u0000",
+				"5": "Kanaal 5\u0000",
+				"I": "Kanaal I\u0000",
+				"II": "Kanaal II\u0000",
+				"III": "Kanaal III\u0000",
+				"IV": "Kanaal IV\u0000",
+				"V": "Kanaal V\u0000",
+				"A": "Kanaal A\u0000",
+				"B": "Kanaal B\u0000",
+				"C": "Kanaal C\u0000",
+				"D": "Kanaal D\u0000",
+				"E": "Kanaal E\u0000"
+			}
+		},
+		"error": {
+			"device_exists": "Apparaat is al gekoppeld met Homey.\u0000",
+			"no_device": "Er is geen apparaat ingesteld. Sluit de pairing wizard en probeer opnieuw.\u0000",
+			"no_settings": "Geen instelling object. Probeer aub opnieuw.\u0000",
+			"invalid_device": "Het apparaat dat is aangemaakt is incorrect. Probeer aub opnieuw.\u0000"
+		}
+	}
 }
