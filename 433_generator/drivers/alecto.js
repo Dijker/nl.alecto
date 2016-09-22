@@ -22,7 +22,12 @@ module.exports = class Alecto extends DefaultDriver {
 
 	payloadToData(payload) { // Convert received data to usable variables
 		if (payload.length === this.config.signalLength) {
-			return { id: this.bitArrayToString(payload), state: 1 };
+			const data = {
+				address: this.bitArrayToString(payload),
+				state: 1,
+			};
+			data.id = data.address;
+			return data;
 		}
 		return null;
 	}
