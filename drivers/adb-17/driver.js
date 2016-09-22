@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable */
 const config = {
-	signal: 'alecto_1',
+	signal: 'alecto1',
 	signalLength: 17,
 	images: {
 		small: '../../433_generator/assets/adb-17/images/small.jpg',

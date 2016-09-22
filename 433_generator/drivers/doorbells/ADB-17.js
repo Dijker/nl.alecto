@@ -12,9 +12,4 @@ module.exports = class ADB17 extends Doorbell {
 		data.id = data.address;
 		return data;
 	}
-
-	send(device, data, callback) {
-		data.repeatCount = 4;
-		super.send(device, data, callback);
-	}
 };

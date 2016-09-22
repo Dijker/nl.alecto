@@ -4,7 +4,7 @@ module.exports = {
 	deviceClasses: {
 		alecto_1: {
 			signal: {
-				id: 'alecto_1',
+				id: 'alecto1',
 				sof: [340],
 				words: [
 					[1130, 340],
@@ -12,7 +12,7 @@ module.exports = {
 				],
 				interval: 5860,
 				sensitivity: 0.3,
-				repetitions: 20,
+				repetitions: 40,
 				minimalLength: 17,
 				maximalLength: 17,
 			},
@@ -20,7 +20,7 @@ module.exports = {
 		},
 		alecto_2: {
 			signal: {
-				id: 'alecto_2',
+				id: 'alecto2',
 				eof: [225],
 				words: [
 					[225, 700],
@@ -36,7 +36,7 @@ module.exports = {
 		},
 		alecto_3: {
 			signal: {
-				id: 'alecto_3',
+				id: 'alecto3',
 				eof: [170],
 				words: [
 					[170, 500],

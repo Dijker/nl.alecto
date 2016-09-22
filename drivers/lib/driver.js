@@ -186,7 +186,6 @@ module.exports = class Driver extends EventEmitter {
 	}
 
 	send(device, data, callback) {
-		console.log(device, data);
 		return new Promise((resolve, reject) => {
 			this.registerSignal();
 			callback = typeof callback === 'function' ? callback : () => null;

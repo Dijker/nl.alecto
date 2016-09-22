@@ -3,7 +3,7 @@
 module.exports = {
 	devices: {
 		'adb-12': {
-			signal: 'alecto_2',
+			signal: 'alecto2',
 			signalLength: 24,
 			images: {
 				small: '../433_generator/assets/adb-12/images/small.jpg',
@@ -211,7 +211,7 @@ module.exports = {
 			}]
 		},
 		'adb-17': {
-			signal: 'alecto_1',
+			signal: 'alecto1',
 			signalLength: 17,
 			images: {
 				small: '../433_generator/assets/adb-17/images/small.jpg',
@@ -388,7 +388,7 @@ module.exports = {
 			debounceTimeout: 3000
 		},
 		'adb-18': {
-			signal: 'alecto_2',
+			signal: 'alecto2',
 			signalLength: 24,
 			images: {
 				small: '../433_generator/assets/adb-18/images/small.jpg',

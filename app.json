@@ -1,6 +1,6 @@
 {
   "id": "nl.alecto",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "compatibility": ">=0.9",
   "category": "appliances",
   "name": {
@@ -24,24 +24,24 @@
   "signals": {
     "433": {
       "alecto_1": {
-        "sof": [
-          340
+        "eof": [
+          170
         ],
         "words": [
           [
-            1130,
-            340
+            170,
+            740
           ],
           [
-            400,
-            1070
+            620,
+            280
           ]
         ],
-        "interval": 5860,
+        "interval": 7000,
         "sensitivity": 0.3,
         "repetitions": 20,
-        "minimalLength": 17,
-        "maximalLength": 17
+        "minimalLength": 24,
+        "maximalLength": 24
       },
       "alecto_2_0": {
         "sof": [
@@ -123,7 +123,7 @@
         "minimalLength": 24,
         "maximalLength": 24
       },
-      "alecto_2": {
+      "alecto2": {
         "eof": [
           225
         ],
@@ -142,6 +142,26 @@
         "repetitions": 20,
         "minimalLength": 24,
         "maximalLength": 24
+      },
+      "alecto1": {
+        "sof": [
+          340
+        ],
+        "words": [
+          [
+            1130,
+            340
+          ],
+          [
+            400,
+            1070
+          ]
+        ],
+        "interval": 5860,
+        "sensitivity": 0.3,
+        "repetitions": 40,
+        "minimalLength": 17,
+        "maximalLength": 17
       }
     }
   },
