@@ -266,6 +266,24 @@ module.exports = class Driver extends EventEmitter {
 		throw new Error(`generateData() should be overwritten by own driver for device ${this.config.id}`);
 	}
 
+	sendProgramSignal(device, callback){
+		const exports = this.getExports();
+		if (exports.capabilities) {
+			Object.keys(exports.capabilities).forEach(capability => {
+				if (exports.capabilities[capability].get && exports.capabilities[capability].set) {
+					exports.capabilities[capability].get(device, (err, result) => {
+						if (typeof result === 'boolean') {
+							exports.capabilities[capability].set(device, !result, callback);
+						}
+					});
+				}
+			});
+		} else {
+			callback(new Error('Device does not have boolean capability'));
+		}
+		callback(null, true);
+	}
+
 	pair(socket) { // Pair sequence
 		this.registerSignal();
 		this.isPairing = true;
@@ -339,6 +357,13 @@ module.exports = class Driver extends EventEmitter {
 			callback(null, this.pairingDevice);
 		});
 
+		socket.on('program_send', (data, callback) => {
+			if (this.pairingDevice && this.pairingDevice.data) {
+				return this.sendProgramSignal(this.pairingDevice.data, callback);
+			}
+			return callback(new Error('433_generator.error.no_device'));
+		});
+
 		socket.on('test', (data, callback) => {
 			callback(!this.pairingDevice, this.pairingDevice);
 		});
@@ -351,7 +376,10 @@ module.exports = class Driver extends EventEmitter {
 		});
 
 		socket.on('send', (data, callback) => {
-			this.send(this.pairingDevice.data, data).then(callback.bind(false)).catch(callback);
+			if (this.pairingDevice && this.pairingDevice.data) {
+				this.send(this.pairingDevice.data, data).then(callback.bind(false)).catch(callback);
+			}
+			return callback(new Error('433_generator.error.no_device'));
 		});
 
 		socket.on('set_settings', (data, callback) => {

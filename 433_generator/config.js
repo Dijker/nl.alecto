@@ -359,8 +359,8 @@ module.exports = {
 			{
 				id: 'triggerDoorbell',
 				title: {
-					en: 'Ring the doorbell',
-					nl: 'Laat de deurbel af gaan',
+					en: 'Deprecated, please re-pair device',
+					nl: 'Verouderd, voeg aub apparaat opnieuw toe',
 				},
 				args: [
 					{

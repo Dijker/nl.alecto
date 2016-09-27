@@ -65,8 +65,8 @@ function createDriver(driver) {
 				addDevice(device);
 			});
 
-			flowInit(self);
-
+			// flowInit(self); Disabled flow cards for deprecated drivers
+ 
 			callback();
 		},
 		
