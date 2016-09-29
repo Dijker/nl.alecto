@@ -121,7 +121,7 @@ const config = {
 				append: [],
 				svgWidth: '80vw',
 				svgHeight: '70vh',
-				initWithDeviceData: false,
+				initWithDeviceData: true,
 				previous: true,
 				next: true,
 				sendToggleOnInit: false,

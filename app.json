@@ -1,7 +1,7 @@
 {
   "id": "nl.alecto",
-  "version": "2.1.0",
-  "compatibility": ">=0.10",
+  "version": "2.1.1",
+  "compatibility": ">=0.10.1",
   "category": "appliances",
   "name": {
     "en": "Alecto",
@@ -523,6 +523,24 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=adb-18"
+          }
+        ]
+      },
+      {
+        "id": "triggerDoorbell",
+        "title": {
+          "en": "Deprecated, please re-pair device",
+          "nl": "Verouderd, voeg aub apparaat opnieuw toe"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=doorbell",
+            "placeholder": {
+              "en": "Which doorbell?",
+              "nl": "Welke deurbel?"
+            }
           }
         ]
       }
