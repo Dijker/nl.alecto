@@ -1,6 +1,6 @@
 {
   "id": "nl.alecto",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "compatibility": ">=0.10.1",
   "category": "appliances",
   "name": {
@@ -426,14 +426,6 @@
       "class": "button",
       "capabilities": [
         "onoff"
-      ],
-      "pair": [
-        {
-          "id": "imitate1"
-        },
-        {
-          "id": "done"
-        }
       ]
     }
   ],

@@ -344,14 +344,6 @@ module.exports = {
 			capabilities: [
 				'onoff',
 			],
-			pair: [
-				{
-					id: 'imitate1',
-				},
-				{
-					id: 'done',
-				},
-			],
 		},
 	],
 	flow: {
