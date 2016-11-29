@@ -1,6 +1,6 @@
 {
   "id": "nl.alecto",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "compatibility": ">=0.10.1",
   "category": "appliances",
   "name": {
@@ -416,8 +416,8 @@
     {
       "id": "doorbell",
       "name": {
-        "en": "Alecto doorbell",
-        "nl": "Alecto deurbel"
+        "en": "[Deprectated] Alecto doorbell",
+        "nl": "[Verouderd] Alecto deurbel"
       },
       "images": {
         "large": "./drivers/doorbell/assets/images/large.png",

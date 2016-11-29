@@ -333,8 +333,8 @@ module.exports = {
 		{
 			id: 'doorbell',
 			name: {
-				en: 'Alecto doorbell',
-				nl: 'Alecto deurbel',
+				en: '[Deprectated] Alecto doorbell',
+				nl: '[Verouderd] Alecto deurbel',
 			},
 			images: {
 				large: '../drivers/doorbell/assets/images/large.png',
