@@ -175,6 +175,7 @@ const config = {
 		}]
 	}],
 	name: 'devices.adb-17.name',
+	alternativeSignal: 'alecto4',
 	debounceTimeout: 3000
 };
 const Driver = require(config.driver);

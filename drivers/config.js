@@ -385,6 +385,7 @@ module.exports = {
 				}]
 			}],
 			name: 'devices.adb-17.name',
+			alternativeSignal: 'alecto4',
 			debounceTimeout: 3000
 		},
 		'adb-18': {

@@ -12,7 +12,7 @@ module.exports = {
 				],
 				interval: 5860,
 				sensitivity: 0.3,
-				repetitions: 40,
+				repetitions: 20,
 				minimalLength: 17,
 				maximalLength: 17,
 			},
@@ -228,6 +228,7 @@ module.exports = {
 			name: 'devices.adb-17.name',
 			icon: './assets/adb-17/receiver.svg',
 			driver: './drivers/doorbells/ADB-17.js',
+			alternativeSignal: 'alecto4',
 			images: {
 				small: './assets/adb-17/images/small.jpg',
 				large: './assets/adb-17/images/large.jpg',
@@ -370,6 +371,19 @@ module.exports = {
 	},
 	signals: {
 		433: {
+			// NOTICE: Don't remove alecto4 when depricating old drivers
+			alecto4: {
+				sof: [1071],
+				words: [
+					[1112, 346],
+					[388, 1067],
+				],
+				interval: 5860,
+				sensitivity: 0.3,
+				repetitions: 20,
+				minimalLength: 17,
+				maximalLength: 17,
+			},
 			alecto_1: {
 				eof: [
 					170,

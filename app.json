@@ -1,7 +1,7 @@
 {
   "id": "nl.alecto",
-  "version": "2.2.2",
-  "compatibility": ">=0.10.1",
+  "version": "2.3.0",
+  "compatibility": ">=1.0.5",
   "category": "appliances",
   "name": {
     "en": "Alecto",
@@ -23,6 +23,26 @@
   ],
   "signals": {
     "433": {
+      "alecto4": {
+        "sof": [
+          1071
+        ],
+        "words": [
+          [
+            1112,
+            346
+          ],
+          [
+            388,
+            1067
+          ]
+        ],
+        "interval": 5860,
+        "sensitivity": 0.3,
+        "repetitions": 20,
+        "minimalLength": 17,
+        "maximalLength": 17
+      },
       "alecto_1": {
         "eof": [
           170
@@ -159,7 +179,7 @@
         ],
         "interval": 5860,
         "sensitivity": 0.3,
-        "repetitions": 40,
+        "repetitions": 20,
         "minimalLength": 17,
         "maximalLength": 17
       }

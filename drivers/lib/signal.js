@@ -81,13 +81,9 @@ module.exports = class Signal extends EventEmitter {
 
 			registerPromises.set(this.signalKey, new Promise((resolve, reject) => {
 				this.signal.register(err => { // Register signal
-					if (err) {
-						this.logger.warn(`[Signal ${this.signalKey}] signal register error`, err);
-						this.emit('error', err);
-						reject(err);
-					} else {
-						resolve();
-					}
+					// Log errors but other than that just ignore them
+					if (err) this.logger.error(err, { extra: { registerLock, registerPromises } });
+					resolve();
 				});
 			}));
 		}
@@ -107,8 +103,11 @@ module.exports = class Signal extends EventEmitter {
 			if (registerLock.get(this.signalKey).size === 0) {
 				this.logger.info(`[Signal ${this.signalKey}] unregistered signal`);
 
-				this.signal.unregister(err => {
-					if (err) this.emit('error', err);
+				registerPromises.get(this.signalKey).then(() => {
+					this.signal.unregister(err => {
+						// Log errors but other than that just ignore them
+						if (err) this.logger.error(err, { extra: { registerLock, registerPromises } });
+					});
 				});
 			}
 		}
@@ -150,7 +149,7 @@ module.exports = class Signal extends EventEmitter {
 		}).then(() => this.unregister(registerLockKey))
 			.catch(err => {
 				this.unregister(registerLockKey);
-				this.logger.warn(`[Signal ${this.signalKey}] tx error:`, err);
+				this.logger.error(`[Signal ${this.signalKey}] tx error:`, err);
 				this.emit('error', err);
 				throw err;
 			});
