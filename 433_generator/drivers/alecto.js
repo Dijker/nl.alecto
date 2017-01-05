@@ -12,7 +12,7 @@ module.exports = class Alecto extends DefaultDriver {
 
 	generateData() {
 		const data = {
-			address: Math.random().toString(2).substr(2, this.config.signalLength),
+			address: this.generateRandomBitString(this.config.signalLength),
 			state: 0,
 			generated: true,
 		};
