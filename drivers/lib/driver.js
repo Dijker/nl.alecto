@@ -537,7 +537,7 @@ module.exports = class Driver extends EventEmitter {
 			);
 			let device;
 			do {
-				device = this.generateDevice(this.generateData());
+				device = this.generateDevice(Object.assign(this.generateData(), { generated: true }));
 			} while (this.get(device));
 			if (!device) {
 				return callback(new Error('433_generator.error.invalid_device'));
@@ -826,7 +826,7 @@ module.exports = class Driver extends EventEmitter {
 		return arrayA.map((val, index) => val !== arrayB[index] ? 1 : 0);
 	}
 
-	generateRandomBitString(length){
+	generateRandomBitString(length) {
 		return new Array(length)
 			.fill(null)
 			.map(() => Math.round(Math.random()))
