@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 114.27 285.64" style="enable-background:new 0 0 114.27 285.64;" xml:space="preserve">
+	 viewBox="0 0 114.27 285.64" style="enable-background:new 0 0 114.27 285.64;" xml:space="preserve" xmlns:pulse="-">
 <style type="text/css">
 	.st0{fill-rule:evenodd;clip-rule:evenodd;}
-	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#009DE2;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;}
 	.st2{fill:#1A1A18;}
 </style>
 <g>
@@ -16,7 +16,7 @@
 		S73.57,86.15,57.14,86.15z"/>
 </g>
 <g>
-	<circle class="st1" cx="57.14" cy="115.94" r="30.51"/>
+	<circle pulse:initial="true" class="st1" cx="57.14" cy="115.94" r="30.51"/>
 </g>
 <g>
 	<path d="M57.14,147.16c-17.21,0-31.21-14-31.21-31.21s14-31.21,31.21-31.21c17.21,0,31.22,14,31.22,31.21

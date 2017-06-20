@@ -50,6 +50,22 @@ module.exports = {
 			},
 			signalLength: 24,
 		},
+		alecto_4: {
+			signal: {
+				id: 'alecto4',
+				sof: [1071],
+				words: [
+					[1112, 346],
+					[388, 1067],
+				],
+				interval: 5860,
+				sensitivity: 0.3,
+				repetitions: 20,
+				minimalLength: 17,
+				maximalLength: 17,
+			},
+			signalLength: 17,
+		},
 		doorbell: {
 			driver: './drivers/doorbell.js',
 			class: 'doorbell',
@@ -109,6 +125,16 @@ module.exports = {
 		},
 		pairing_doorbell: {
 			extends: ['generic_toggle', 'doorbell'],
+		},
+		non_pairing_doorbell: {
+			extends: ['generic_toggle', 'doorbell'],
+			pair: {
+				viewOrder: [
+					'generic_imitate',
+					'generic_test_button_2',
+					'generic_done',
+				],
+			},
 		},
 		dipswitch_doorbell: {
 			extends: ['generic_dipswitch_switch', 'doorbell'],
@@ -223,6 +249,24 @@ module.exports = {
 				},
 			],
 		},
+		'adb-15': {
+			extends: ['alecto_4', 'non_pairing_doorbell'],
+			name: 'devices.adb-15.name',
+			icon: './assets/adb-15/receiver.svg',
+			driver: './drivers/doorbells/ADB-15.js',
+			images: {
+				small: './assets/adb-15/images/small.jpg',
+				large: './assets/adb-15/images/large.jpg',
+			},
+			debounceTimeout: 1000,
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/adb-15/sender.svg',
+					},
+				},
+			},
+		},
 		'adb-17': {
 			extends: ['alecto_1', 'pairing_doorbell'],
 			name: 'devices.adb-17.name',
@@ -328,162 +372,6 @@ module.exports = {
 					],
 				},
 			],
-		},
-	},
-	drivers: [
-		{
-			id: 'doorbell',
-			name: {
-				en: '[Deprectated] Alecto doorbell',
-				nl: '[Verouderd] Alecto deurbel',
-			},
-			images: {
-				large: '../drivers/doorbell/assets/images/large.png',
-				small: '../drivers/doorbell/assets/images/small.png'
-			},
-			class: 'button',
-			capabilities: [
-				'onoff',
-			],
-		},
-	],
-	flow: {
-		actions: [
-			{
-				id: 'triggerDoorbell',
-				title: {
-					en: 'Deprecated, please re-pair device',
-					nl: 'Verouderd, voeg aub apparaat opnieuw toe',
-				},
-				args: [
-					{
-						name: 'device',
-						type: 'device',
-						filter: 'driver_id=doorbell',
-						placeholder: {
-							en: 'Which doorbell?',
-							nl: 'Welke deurbel?',
-						},
-					},
-				],
-			},
-		],
-	},
-	signals: {
-		433: {
-			// NOTICE: Don't remove alecto4 when depricating old drivers
-			alecto4: {
-				sof: [1071],
-				words: [
-					[1112, 346],
-					[388, 1067],
-				],
-				interval: 5860,
-				sensitivity: 0.3,
-				repetitions: 20,
-				minimalLength: 17,
-				maximalLength: 17,
-			},
-			alecto_1: {
-				eof: [
-					170,
-				],
-				words: [
-					[
-						170,
-						740,
-					],
-					[
-						620,
-						280,
-					],
-				],
-				interval: 7000,
-				sensitivity: 0.3,
-				repetitions: 20,
-				minimalLength: 24,
-				maximalLength: 24,
-			},
-			alecto_2_0: {
-				sof: [
-					1030,
-				],
-				words: [
-					[
-						1130,
-						340,
-					],
-					[
-						400,
-						1070,
-					],
-				],
-				interval: 5860,
-				sensitivity: 0.3,
-				repetitions: 20,
-				minimalLength: 17,
-				maximalLength: 17,
-			},
-			alecto_2_1: {
-				sof: [
-					340,
-				],
-				words: [
-					[
-						1130,
-						340,
-					],
-					[
-						400,
-						1070,
-					],
-				],
-				interval: 5860,
-				sensitivity: 0.3,
-				repetitions: 20,
-				minimalLength: 17,
-				maximalLength: 17,
-			},
-			alecto_3: {
-				eof: [
-					225,
-				],
-				words: [
-					[
-						225,
-						700,
-					],
-					[
-						700,
-						240,
-					],
-				],
-				interval: 7215,
-				sensitivity: 0.3,
-				repetitions: 20,
-				minimalLength: 24,
-				maximalLength: 24,
-			},
-			alecto_4: {
-				eof: [
-					170,
-				],
-				words: [
-					[
-						170,
-						500,
-					],
-					[
-						500,
-						175,
-					],
-				],
-				interval: 5200,
-				sensitivity: 0.3,
-				repetitions: 20,
-				minimalLength: 24,
-				maximalLength: 24,
-			},
 		},
 	},
 };

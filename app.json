@@ -1,6 +1,6 @@
 {
   "id": "nl.alecto",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "compatibility": ">=1.0.5",
   "category": "appliances",
   "name": {
@@ -23,126 +23,6 @@
   ],
   "signals": {
     "433": {
-      "alecto4": {
-        "sof": [
-          1071
-        ],
-        "words": [
-          [
-            1112,
-            346
-          ],
-          [
-            388,
-            1067
-          ]
-        ],
-        "interval": 5860,
-        "sensitivity": 0.3,
-        "repetitions": 20,
-        "minimalLength": 17,
-        "maximalLength": 17
-      },
-      "alecto_1": {
-        "eof": [
-          170
-        ],
-        "words": [
-          [
-            170,
-            740
-          ],
-          [
-            620,
-            280
-          ]
-        ],
-        "interval": 7000,
-        "sensitivity": 0.3,
-        "repetitions": 20,
-        "minimalLength": 24,
-        "maximalLength": 24
-      },
-      "alecto_2_0": {
-        "sof": [
-          1030
-        ],
-        "words": [
-          [
-            1130,
-            340
-          ],
-          [
-            400,
-            1070
-          ]
-        ],
-        "interval": 5860,
-        "sensitivity": 0.3,
-        "repetitions": 20,
-        "minimalLength": 17,
-        "maximalLength": 17
-      },
-      "alecto_2_1": {
-        "sof": [
-          340
-        ],
-        "words": [
-          [
-            1130,
-            340
-          ],
-          [
-            400,
-            1070
-          ]
-        ],
-        "interval": 5860,
-        "sensitivity": 0.3,
-        "repetitions": 20,
-        "minimalLength": 17,
-        "maximalLength": 17
-      },
-      "alecto_3": {
-        "eof": [
-          225
-        ],
-        "words": [
-          [
-            225,
-            700
-          ],
-          [
-            700,
-            240
-          ]
-        ],
-        "interval": 7215,
-        "sensitivity": 0.3,
-        "repetitions": 20,
-        "minimalLength": 24,
-        "maximalLength": 24
-      },
-      "alecto_4": {
-        "eof": [
-          170
-        ],
-        "words": [
-          [
-            170,
-            500
-          ],
-          [
-            500,
-            175
-          ]
-        ],
-        "interval": 5200,
-        "sensitivity": 0.3,
-        "repetitions": 20,
-        "minimalLength": 24,
-        "maximalLength": 24
-      },
       "alecto2": {
         "eof": [
           225
@@ -162,6 +42,26 @@
         "repetitions": 20,
         "minimalLength": 24,
         "maximalLength": 24
+      },
+      "alecto4": {
+        "sof": [
+          1071
+        ],
+        "words": [
+          [
+            1112,
+            346
+          ],
+          [
+            388,
+            1067
+          ]
+        ],
+        "interval": 5860,
+        "sensitivity": 0.3,
+        "repetitions": 20,
+        "minimalLength": 17,
+        "maximalLength": 17
       },
       "alecto1": {
         "sof": [
@@ -269,6 +169,37 @@
           "id": "generic_test_button",
           "navigation": {
             "prev": "generic_dipswitch",
+            "next": "generic_done"
+          }
+        },
+        {
+          "id": "generic_done",
+          "navigation": {}
+        }
+      ]
+    },
+    {
+      "id": "adb-15",
+      "name": {
+        "en": "ADB-15"
+      },
+      "class": "doorbell",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "images": {
+        "small": "./433_generator/assets/adb-15/images/small.jpg",
+        "large": "./433_generator/assets/adb-15/images/large.jpg"
+      },
+      "pair": [
+        {
+          "id": "generic_imitate",
+          "navigation": {}
+        },
+        {
+          "id": "generic_test_button_2",
+          "navigation": {
+            "prev": "generic_imitate",
             "next": "generic_done"
           }
         },
@@ -432,21 +363,6 @@
           "navigation": {}
         }
       ]
-    },
-    {
-      "id": "doorbell",
-      "name": {
-        "en": "[Deprectated] Alecto doorbell",
-        "nl": "[Verouderd] Alecto deurbel"
-      },
-      "images": {
-        "large": "./drivers/doorbell/assets/images/large.png",
-        "small": "./drivers/doorbell/assets/images/small.png"
-      },
-      "class": "button",
-      "capabilities": [
-        "onoff"
-      ]
     }
   ],
   "flow": {
@@ -462,6 +378,20 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=adb-12"
+          }
+        ]
+      },
+      {
+        "id": "adb-15:received",
+        "title": {
+          "en": "Doorbell button is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=adb-15"
           }
         ]
       },
@@ -511,6 +441,20 @@
         ]
       },
       {
+        "id": "adb-15:send",
+        "title": {
+          "en": "Trigger doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=adb-15"
+          }
+        ]
+      },
+      {
         "id": "adb-17:send",
         "title": {
           "en": "Trigger doorbell",
@@ -535,24 +479,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=adb-18"
-          }
-        ]
-      },
-      {
-        "id": "triggerDoorbell",
-        "title": {
-          "en": "Deprecated, please re-pair device",
-          "nl": "Verouderd, voeg aub apparaat opnieuw toe"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=doorbell",
-            "placeholder": {
-              "en": "Which doorbell?",
-              "nl": "Welke deurbel?"
-            }
           }
         ]
       }
