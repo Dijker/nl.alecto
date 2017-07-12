@@ -89,6 +89,18 @@
 					}
 				}
 			}
+		},
+		"smoke_sensor": {
+			"views": {
+				"generic_imitate": {
+					"title": "Koppel je rookmelder",
+					"body": "Houd de \"TEST\" knop op de rookmelder even ingedrukt totdat deze gaat piepen om hem te pairen met Homey."
+				},
+				"generic_test_remote": {
+					"title": "Test je rookmelder",
+					"body": "Om er zeker van te zijn dat de rookmelder correct is gekoppeld kun je dit testen door opnieuw de \"TEST\" button even in te houden. De alarmbel zou moeten aangeven dat het alarm af gaat."
+				}
+			}
 		}
 	},
 	"views": {
@@ -114,6 +126,9 @@
 			"name": null
 		},
 		"adb-15": {
+			"name": null
+		},
+		"sa-33": {
 			"name": null
 		}
 	},

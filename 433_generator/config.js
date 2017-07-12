@@ -66,6 +66,42 @@ module.exports = {
 			},
 			signalLength: 17,
 		},
+		alecto_smoke_sensor: {
+			signal: {
+				id: 'alecto_smoke_sensor',
+				sof: [3789, 3776],
+				eof: [902, 4067, 991],
+				words: [
+					[1895, 974],
+					[857, 2011],
+				],
+				interval: 3961,
+				sensitivity: 0.5,
+				repetitions: 10,
+				minimalLength: 16,
+				maximalLength: 16,
+			},
+		},
+		smoke_sensor: {
+			extends: ['generic_sensor', 'alecto_smoke_sensor'],
+			driver: './drivers/smokedetector/SA-33.js',
+			capabilities: ['alarm_smoke'],
+			pair: {
+				viewOptions: {
+					generic_imitate: {
+						svg: './assets/sa-33/pair.svg',
+						title: 'deviceClasses.smoke_sensor.views.generic_imitate.title',
+						body: 'deviceClasses.smoke_sensor.views.generic_imitate.body',
+					},
+					generic_test_remote: {
+						svg: './assets/sa-33/alarm.svg',
+						title: 'deviceClasses.smoke_sensor.views.generic_test_remote.title',
+						body: 'deviceClasses.smoke_sensor.views.generic_test_remote.body',
+						initWithDeviceData: false,
+					},
+				},
+			},
+		},
 		doorbell: {
 			driver: './drivers/doorbell.js',
 			class: 'doorbell',
@@ -372,6 +408,16 @@ module.exports = {
 					],
 				},
 			],
+		},
+		'sa-33': {
+			extends: ['smoke_sensor'],
+			name: 'devices.sa-33.name',
+			images: {
+				small: './assets/sa-33/images/small.jpg',
+				large: './assets/sa-33/images/large.jpg',
+			},
+			driver: './drivers/smokedetector/SA-33.js',
+			icon: './assets/sa-33/icon.svg',
 		},
 	},
 };

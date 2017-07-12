@@ -89,6 +89,18 @@
 					}
 				}
 			}
+		},
+		"smoke_sensor": {
+			"views": {
+				"generic_imitate": {
+					"title": "Pair your smoke sensor",
+					"body": "Press and hold the \"TEST\" button of one of your smoke sensors until it beeps, then release the button."
+				},
+				"generic_test_remote": {
+					"title": "Test your smoke sensor",
+					"body": "To make sure the smoke sensor is paired correctly you can test it by holding the \"TEST\" button of a smoke sensor again. The alarm bell should indicate that the alarm turned on."
+				}
+			}
 		}
 	},
 	"views": {
@@ -211,6 +223,9 @@
 		},
 		"adb-15": {
 			"name": "ADB-15"
+		},
+		"sa-33": {
+			"name": "SA-33"
 		}
 	}
 }
