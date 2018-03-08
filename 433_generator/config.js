@@ -53,10 +53,15 @@ module.exports = {
 		alecto_4: {
 			signal: {
 				id: 'alecto4',
+				// Replace for this in next version. SOF can differ between devices and we hypothesize that the first bit is
+				// always 1 so we add the sof to AGC and the first bit to the sof.
+				// agc: [1060, 400],
+				// sof: [400],
+				// minimalLength: 16,
 				sof: [1071],
 				words: [
-					[1112, 346],
-					[388, 1067],
+					[1125, 335],
+					[400, 1060],
 				],
 				interval: 5860,
 				sensitivity: 0.3,
