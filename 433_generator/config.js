@@ -53,7 +53,7 @@ module.exports = {
 		alecto_4: {
 			signal: {
 				id: 'alecto4',
-				sof: [1071],
+				agc: [1071],
 				words: [
 					[1112, 346],
 					[388, 1067],
