@@ -5,8 +5,5 @@
     },
     "icon": "{{driverPath}}/assets/icon.svg",
     "capabilities": [],
-    "class": "other",
-    "rf": {
-        "signal": "smartwares"
-    }
+    "class": "other"
 }

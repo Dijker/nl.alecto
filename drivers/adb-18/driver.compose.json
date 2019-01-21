@@ -1,0 +1,59 @@
+{
+    "$extends": [
+        "defaults",
+        "rf.doorbell"
+    ],
+    "id": "adb-18",
+    "name": {
+        "en": "ADB-18"
+    },
+    "rf": {
+        "signal": "alecto2"
+    },
+    "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General",
+            "nl": "Algemeen"
+          },
+          "children": [
+            {
+              "id": "sound",
+              "type": "dropdown",
+              "value": "11000000",
+              "label": {
+                "en": "Doorbell sound",
+                "nl": "Deurbel geluid"
+              },
+              "values": [
+                {
+                  "id": "00000011",
+                  "label": {
+                    "en": "Für Elise"
+                  }
+                },
+                {
+                  "id": "00001100",
+                  "label": {
+                    "en": "Westminster bell"
+                  }
+                },
+                {
+                  "id": "00110000",
+                  "label": {
+                    "en": "Ding Dong 1"
+                  }
+                },
+                {
+                  "id": "11000000",
+                  "label": {
+                    "en": "Ding Dong 2"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+}

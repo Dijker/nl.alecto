@@ -1,0 +1,47 @@
+{
+    "$extends": [
+        "defaults",
+        "rf.doorbell"
+    ],
+    "id": "adb-12",
+    "name": {
+        "en": "ADB-12"
+    },
+    "rf": {
+        "signal": "alecto2"
+    },
+    "settings": [
+        {
+            "type": "group",
+            "label": {
+                "en": "General",
+                "nl": "Algemeen"
+            },
+            "children": [
+                {
+                    "id": "sound",
+                    "type": "dropdown",
+                    "value": "11000000",
+                    "label": {
+                        "en": "Doorbell sound",
+                        "nl": "Deurbel geluid"
+                    },
+                    "values": [
+                        {
+                            "id": "11000000",
+                            "label": {
+                                "en": "Ding Dong 1"
+                            }
+                        },
+                        {
+                            "id": "00001100",
+                            "label": {
+                                "en": "Ding Dong 2"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

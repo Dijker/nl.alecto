@@ -1,0 +1,12 @@
+{
+    "eof": [225],
+    "words": [
+        [225, 700],
+        [700, 240]
+    ],
+    "interval": 7215,
+    "sensitivity": 0.3,
+    "repetitions": 20,
+    "minimalLength": 24,
+    "maximalLength": 24
+}

@@ -1,0 +1,13 @@
+{
+    "$extends": [
+        "defaults",
+        "rf.doorbell"
+    ],
+    "id": "adb-15",
+    "name": {
+        "en": "ADB-15"
+    },
+    "rf": {
+        "signal": "alecto4"
+    }
+}

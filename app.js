@@ -1,15 +1,11 @@
-"use strict";
+'use strict';
 
-var self = module.exports = {
-	
-	init: function(){
-		
-	},
-	deleted: function(){
-		
-	},
-	capabilities: function(){
-		
+const Homey = require('homey');
+
+class Alecto extends Homey.App {
+	onInit() {
+		this.log('Alecto is running...');
 	}
-	
 }
+
+module.exports = Alecto;

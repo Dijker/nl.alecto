@@ -1,0 +1,41 @@
+{
+    "$extends": [
+        "defaults"
+    ],
+    "id": "sa-33",
+    "name": {
+        "en": "SA-33 Smoke detector",
+        "nl": "SA-33 Rookmelder"
+    },
+    "class": "sensor",
+    "capabilities": ["alarm_smoke"],
+    "rf": {
+        "signal": "alecto_smoke_sensor"
+      },
+    "pair": [
+        {
+            "$template": "rf.imitate",
+            "id": "rf.imitate",
+            "options": {
+                "svg": "assets/svg/pair.svg",
+                "title": "rf.pair.imitate.title.smokesensor",
+                "body": "rf.pair.imitate.body.smokesensor"
+            }
+        },
+        {
+            "$template": "rf.test",
+            "id": "rf.test",
+            "options": {
+                "svg": "assets/svg/test.svg"
+            },
+            "navigation": {
+                "prev": "rf.imitate",
+                "next": "rf.done"
+            }
+        },
+        {
+            "$template": "rf.done",
+            "id": "rf.done"
+        }
+    ]
+}

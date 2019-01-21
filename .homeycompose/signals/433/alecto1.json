@@ -1,0 +1,12 @@
+{
+    "sof": [340],
+    "words": [
+        [1130, 340],
+        [400, 1070]
+    ],
+    "interval": 5860,
+    "sensitivity": 0.3,
+    "repetitions": 20,
+    "minimalLength": 17,
+    "maximalLength": 17
+}
