@@ -4,6 +4,15 @@ const Doorbell = require('../../lib/devices/Doorbell');
 const util = require('homey-rfdriver').util;
 
 module.exports = RFDevice => class ADB12Device extends Doorbell(RFDevice) {
+	static generateData() {
+		const data = {
+			address: util.generateRandomBitString(24), //alecto 2 is 24bit long
+			state: 0,
+			generated: true,
+		};
+		data.id = data.address;
+		return data;
+	}
 
     static dipswitchesToData(dipswitches) {
 		const data = {
@@ -26,7 +35,11 @@ module.exports = RFDevice => class ADB12Device extends Doorbell(RFDevice) {
     }
     
     static dataToPayload(data) {
-		return util.bitStringToBitArray(data.address)
-			.concat(util.bitStringToBitArray(this.getSettings(data.id).sound || data.sound)); // move to onData
+		return util.bitStringToBitArray(data.address).concat(util.bitStringToBitArray(data.sound)); 
+	}
+
+	parseOutgoingData(outgoingData) {
+		outgoingData.sound = this.getSetting('sound') || outgoingData.sound;
+		return outgoingData;
 	}
 };

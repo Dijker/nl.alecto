@@ -1,7 +1,8 @@
 {
     "$extends": [
         "defaults",
-        "rf.doorbell"
+        "rf.doorbell",
+        "flow.doorbell"
     ],
     "id": "adb-12",
     "name": {
@@ -37,6 +38,45 @@
                             "id": "00001100",
                             "label": {
                                 "en": "Ding Dong 2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "timeout",
+                    "type": "dropdown",
+                    "value": "0",
+                    "label": {
+                        "en": "Force stop doorbell trigger after",
+                        "nl": "Forceer stoppen deurbel na"
+                    },
+                    "values": [
+                        {
+                            "id": "0",
+                            "label": {
+                                "en": "never",
+                                "nl": "nooit"
+                            }
+                        },
+                        {
+                            "id": "5000",
+                            "label": {
+                                "en": "5 Seconds",
+                                "nl": "5 Seconden"
+                            }
+                        },
+                        {
+                            "id": "10000",
+                            "label": {
+                                "en": "10 Seconds",
+                                "nl": "10 Seconden"
+                            }
+                        },
+                        {
+                            "id": "20000",
+                            "label": {
+                                "en": "20 Seconds",
+                                "nl": "20 Seconden"
                             }
                         }
                     ]

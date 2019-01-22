@@ -22,6 +22,68 @@
   "permissions": [
     "homey:wireless:433"
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "adb-12:received",
+        "title": {
+          "en": "Doorbell is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-12"
+          }
+        ]
+      },
+      {
+        "id": "adb-18:received",
+        "title": {
+          "en": "Doorbell is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-18"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "adb-12:send",
+        "title": {
+          "en": "Trigger Doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-12"
+          }
+        ]
+      },
+      {
+        "id": "adb-18:send",
+        "title": {
+          "en": "Trigger Doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-18"
+          }
+        ]
+      }
+    ]
+  },
   "drivers": [
     {
       "images": {
@@ -137,6 +199,45 @@
                   "id": "00001100",
                   "label": {
                     "en": "Ding Dong 2"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "timeout",
+              "type": "dropdown",
+              "value": "0",
+              "label": {
+                "en": "Force stop doorbell trigger after",
+                "nl": "Forceer stoppen deurbel na"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "never",
+                    "nl": "nooit"
+                  }
+                },
+                {
+                  "id": "5000",
+                  "label": {
+                    "en": "5 Seconds",
+                    "nl": "5 Seconden"
+                  }
+                },
+                {
+                  "id": "10000",
+                  "label": {
+                    "en": "10 Seconds",
+                    "nl": "10 Seconden"
+                  }
+                },
+                {
+                  "id": "20000",
+                  "label": {
+                    "en": "20 Seconds",
+                    "nl": "20 Seconden"
                   }
                 }
               ]
