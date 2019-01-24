@@ -382,6 +382,15 @@
           "doorbell": "Druk op de programmeer knop, het lampje op de deurbel moet gaan knipperen wanneer de knop losgelaten wordt. Klik daarna op 'Programmeer'."
         }
       },
+      "test_button": {
+        "title": {
+          "doorbell": "Test de deurbel"
+        },
+        "body": {
+          "doorbell": "Gebruik de bovenstaande knop om de deurbel te testen. Klik op volgende om verder te gaan."
+        },
+        "label": "Test"
+      },
       "test": {
         "title": {
           "default": "Test het apparaat",

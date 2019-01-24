@@ -1,0 +1,96 @@
+{
+  "class": "doorbell",
+  "capabilities": [
+    "alarm_generic"
+  ],
+  "pair": [
+    {
+      "$template": "rf.choice",
+      "id": "rf.choice",
+      "options": {
+        "title": "rf.pair.choice.title.dipswitch",
+        "body": "rf.pair.choice.body.dipswitch",
+        "choices": [
+          {
+            "name": "rf.pair.choice.buttons.copy.default",
+            "view": "rf.imitate",
+            "svg": "./assets/svg/doorbell.svg"
+          },
+          {
+            "name": "rf.pair.choice.buttons.generate.dipswitch",
+            "view": "rf.info",
+            "svg": "./assets/svg/dipswitches.svg"
+          }
+        ]
+      }
+    },
+    {
+      "$template": "rf.imitate",
+      "id": "rf.imitate",
+      "options": {
+        "title": "rf.pair.imitate.title.doorbell",
+        "body": "rf.pair.imitate.body.doorbell"
+      },
+      "navigation": {
+        "prev": "rf.choice"
+      }
+    },
+    {
+      "$template": "rf.test_button",
+      "id": "rf.test_button",
+      "options": {
+        "title": "rf.pair.test.title.doorbell",
+        "body": "rf.pair.test.body.doorbell",
+        "svg": "./assets/svg/doorbell.svg",
+        "capability": "alarm_generic"
+      },
+      "navigation": {
+        "prev": "rf.imitate",
+        "next": "rf.done"
+      }
+    },
+    {
+      "$template": "rf.info",
+      "id": "rf.info",
+      "options": {
+        "title": "rf.pair.info.title.dipswitch",
+        "body": "rf.pair.info.body.dipswitch",
+        "svg": "./assets/svg/dipswitches.svg"
+      },
+      "navigation": {
+        "prev": "rf.choice",
+        "next": "rf.dipswitch"
+      }
+    },
+    {
+      "$template": "rf.dipswitch",
+      "id": "rf.dipswitch",
+      "options": {
+        "dipswitchList": [
+          [1, 2, 3, 4, 5, 6]
+        ]
+      },
+      "navigation": {
+        "prev": "rf.info"
+      }
+    },
+    {
+      "$template": "rf.test_button",
+      "id": "test_button.2",
+      "options": {
+        "title": "rf.pair.test.title.doorbell",
+        "body": "rf.pair.test.body.doorbell_generated",
+        "svg": "./assets/svg/doorbell.svg",
+        "capability": "alarm_generic"
+      },
+      "navigation": {
+        "prev": "rf.dipswitch",
+        "next": "rf.done"
+      }
+    },
+    {
+      "$template": "rf.done",
+      "id": "rf.done"
+    }
+  ]
+}

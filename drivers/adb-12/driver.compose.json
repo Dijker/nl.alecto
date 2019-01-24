@@ -1,7 +1,7 @@
 {
     "$extends": [
         "defaults",
-        "rf.doorbell",
+        "rf.dipswitch_doorbell",
         "flow.doorbell"
     ],
     "id": "adb-12",

@@ -99,8 +99,8 @@
         {
           "id": "rf.choice",
           "options": {
-            "title": "rf.pair.choice.title.doorbell",
-            "body": "rf.pair.choice.body.doorbell",
+            "title": "rf.pair.choice.title.dipswitch",
+            "body": "rf.pair.choice.body.dipswitch",
             "choices": [
               {
                 "name": "rf.pair.choice.buttons.copy.default",
@@ -108,9 +108,9 @@
                 "svg": "./assets/svg/doorbell.svg"
               },
               {
-                "name": "rf.pair.choice.buttons.generate.default",
-                "view": "rf.program",
-                "svg": "./assets/svg/doorbell_alarm.svg"
+                "name": "rf.pair.choice.buttons.generate.dipswitch",
+                "view": "rf.info",
+                "svg": "./assets/svg/dipswitches.svg"
               }
             ]
           }
@@ -130,7 +130,7 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell",
-            "svg": "./assets/svg/bell.svg",
+            "svg": "./assets/svg/doorbell.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
@@ -139,13 +139,33 @@
           }
         },
         {
-          "id": "rf.program",
+          "id": "rf.info",
           "options": {
-            "title": "rf.pair.program.title.build_in",
-            "body": "rf.pair.program.body.doorbell"
+            "title": "rf.pair.info.title.dipswitch",
+            "body": "rf.pair.info.body.dipswitch",
+            "svg": "./assets/svg/dipswitches.svg"
           },
           "navigation": {
-            "prev": "rf.choice"
+            "prev": "rf.choice",
+            "next": "rf.dipswitch"
+          }
+        },
+        {
+          "id": "rf.dipswitch",
+          "options": {
+            "dipswitchList": [
+              [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+              ]
+            ]
+          },
+          "navigation": {
+            "prev": "rf.info"
           }
         },
         {
@@ -153,11 +173,11 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell_generated",
-            "svg": "./assets/svg/bell.svg",
+            "svg": "./assets/svg/doorbell.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
-            "prev": "rf.program",
+            "prev": "rf.dipswitch",
             "next": "rf.done"
           }
         },
@@ -436,8 +456,8 @@
         {
           "id": "rf.choice",
           "options": {
-            "title": "rf.pair.choice.title.doorbell",
-            "body": "rf.pair.choice.body.doorbell",
+            "title": "rf.pair.choice.title.dipswitch",
+            "body": "rf.pair.choice.body.dipswitch",
             "choices": [
               {
                 "name": "rf.pair.choice.buttons.copy.default",
@@ -445,9 +465,9 @@
                 "svg": "./assets/svg/doorbell.svg"
               },
               {
-                "name": "rf.pair.choice.buttons.generate.default",
-                "view": "rf.program",
-                "svg": "./assets/svg/doorbell_alarm.svg"
+                "name": "rf.pair.choice.buttons.generate.dipswitch",
+                "view": "rf.info",
+                "svg": "./assets/svg/dipswitches.svg"
               }
             ]
           }
@@ -467,7 +487,7 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell",
-            "svg": "./assets/svg/bell.svg",
+            "svg": "./assets/svg/doorbell.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
@@ -476,13 +496,31 @@
           }
         },
         {
-          "id": "rf.program",
+          "id": "rf.info",
           "options": {
-            "title": "rf.pair.program.title.build_in",
-            "body": "rf.pair.program.body.doorbell"
+            "title": "rf.pair.info.title.dipswitch",
+            "body": "rf.pair.info.body.dipswitch",
+            "svg": "./assets/svg/dipswitches.svg"
           },
           "navigation": {
-            "prev": "rf.choice"
+            "prev": "rf.choice",
+            "next": "rf.dipswitch"
+          }
+        },
+        {
+          "id": "rf.dipswitch",
+          "options": {
+            "dipswitchList": [
+              [
+                1,
+                2,
+                3,
+                4
+              ]
+            ]
+          },
+          "navigation": {
+            "prev": "rf.info"
           }
         },
         {
@@ -490,11 +528,11 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell_generated",
-            "svg": "./assets/svg/bell.svg",
+            "svg": "./assets/svg/doorbell.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
-            "prev": "rf.program",
+            "prev": "rf.dipswitch",
             "next": "rf.done"
           }
         },

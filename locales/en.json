@@ -607,6 +607,15 @@
           "doorbell": "Press the program button on your doorbell, the light on your doorbell should start blinking when you release the button. When it is in pairing mode click 'Program'"
         }
       },
+      "test_button": {
+        "title": {
+          "doorbell": "Test your doorbell"
+        },
+        "body": {
+          "doorbell": "Use the button above to test your doorbell. Press next to continue."
+        },
+        "label": "Test"
+      },
       "test": {
         "title": {
           "default": "Test your device",
