@@ -339,13 +339,15 @@
           "default": "Kies een van de volgende opties",
           "switch": "Kopieer de afstandsbediening of programmeer met Homey",
           "codewheel": "Kopieer de afstandsbediening of stel de lettercodeschijfen handmatig in",
-          "dipswitch": "Kopieer de afstandsbediening of stel de dipswitches handmatig in"
+          "dipswitch": "Kopieer de afstandsbediening of stel de dipswitches handmatig in",
+          "doorbell": "Kopieer de afstandsbediening of programmeer de deurbel met Homey"
         },
         "body": {
           "default": "Klik op een van de opties om verder te gaan.",
           "switch": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je het apparaat wil programmeren met een nieuw signaal van Homey.",
           "codewheel": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je de lettercodeschijf handmatig wil instellen.",
-          "dipswitch": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je de dipswitches handmatig wil instellen."
+          "dipswitch": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je de dipswitches handmatig wil instellen.",
+          "doorbell": "Kies of je het signaal van een gekoppelde afstandsbediening wil kopiëren of dat je de deurbel wil programmeren met een nieuw signaal van Homey."
         },
         "buttons": {
           "copy": {

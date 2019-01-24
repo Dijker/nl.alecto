@@ -39,6 +39,34 @@
         ]
       },
       {
+        "id": "adb-15:received",
+        "title": {
+          "en": "Doorbell is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-15"
+          }
+        ]
+      },
+      {
+        "id": "adb-17:received",
+        "title": {
+          "en": "Doorbell is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-17"
+          }
+        ]
+      },
+      {
         "id": "adb-18:received",
         "title": {
           "en": "Doorbell is pressed",
@@ -65,6 +93,34 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=adb-12"
+          }
+        ]
+      },
+      {
+        "id": "adb-15:send",
+        "title": {
+          "en": "Trigger Doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-15"
+          }
+        ]
+      },
+      {
+        "id": "adb-17:send",
+        "title": {
+          "en": "Trigger Doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-17"
           }
         ]
       },
@@ -300,7 +356,8 @@
           "id": "rf.imitate",
           "options": {
             "title": "rf.pair.imitate.title.doorbell",
-            "body": "rf.pair.imitate.body.doorbell"
+            "body": "rf.pair.imitate.body.doorbell",
+            "svg": "./assets/svg/doorbell.svg"
           },
           "navigation": {
             "prev": "rf.choice"
@@ -311,7 +368,7 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell",
-            "svg": "./assets/svg/bell.svg",
+            "svg": "./assets/svg/doorbell.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
@@ -323,7 +380,8 @@
           "id": "rf.program",
           "options": {
             "title": "rf.pair.program.title.build_in",
-            "body": "rf.pair.program.body.doorbell"
+            "body": "rf.pair.program.body.doorbell",
+            "svg": ".assets/svg/doorbell.pair.svg"
           },
           "navigation": {
             "prev": "rf.choice"
@@ -334,7 +392,7 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell_generated",
-            "svg": "./assets/svg/bell.svg",
+            "svg": "./assets/svg/doorbell.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
@@ -351,7 +409,7 @@
         "en": "ADB-15"
       },
       "rf": {
-        "signal": "alecto4"
+        "signal": "alecto1"
       }
     },
     {
@@ -388,7 +446,8 @@
           "id": "rf.imitate",
           "options": {
             "title": "rf.pair.imitate.title.doorbell",
-            "body": "rf.pair.imitate.body.doorbell"
+            "body": "rf.pair.imitate.body.doorbell",
+            "svg": "./assets/svg/doorbell.svg"
           },
           "navigation": {
             "prev": "rf.choice"
@@ -399,7 +458,7 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell",
-            "svg": "./assets/svg/bell.svg",
+            "svg": "./assets/svg/doorbell.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
@@ -411,7 +470,8 @@
           "id": "rf.program",
           "options": {
             "title": "rf.pair.program.title.build_in",
-            "body": "rf.pair.program.body.doorbell"
+            "body": "rf.pair.program.body.doorbell",
+            "svg": ".assets/svg/doorbell.pair.svg"
           },
           "navigation": {
             "prev": "rf.choice"
@@ -422,7 +482,7 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell_generated",
-            "svg": "./assets/svg/bell.svg",
+            "svg": "./assets/svg/doorbell.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
@@ -439,7 +499,7 @@
         "en": "ADB-17"
       },
       "rf": {
-        "signal": "alecto2"
+        "signal": "alecto1"
       }
     },
     {

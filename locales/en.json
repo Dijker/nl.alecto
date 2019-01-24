@@ -562,13 +562,15 @@
           "default": "Choose one of the following options",
           "switch": "Copy signal from remote or pair device with Homey",
           "codewheel": "Copy signal from remote or set the codewheels manually",
-          "dipswitch": "Copy signal from remote or set the dipswitches manually"
+          "dipswitch": "Copy signal from remote or set the dipswitches manually",
+          "doorbell": "Copy signal from remote or pair your doorbell with Homey"
         },
         "body": {
           "default": "Click one of the buttons above to proceed.",
           "switch": "Choose if you want to copy an existing signal from a paired remote or if you want to generate a new signal to pair this device.",
           "codewheel": "Choose if you want to copy an existing signal from a paired remote or if you want to set the codewheels manually to pair this device.",
-          "dipswitch": "Choose if you want to copy an existing signal from a paired remote or if you want to set the dipswitches manually to pair this device."
+          "dipswitch": "Choose if you want to copy an existing signal from a paired remote or if you want to set the dipswitches manually to pair this device.",
+          "doorbell": "Choose if you want to copy an existing signal from a paired remote or if you want to generate a new signal to pair this doorbell."
         },
         "buttons": {
           "copy": {

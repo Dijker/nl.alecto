@@ -1,13 +1,28 @@
 {
     "$extends": [
         "defaults",
-        "rf.doorbell"
+        "rf.doorbell",
+        "flow.doorbell"
     ],
     "id": "adb-17",
     "name": {
         "en": "ADB-17"
     },
     "rf": {
-        "signal": "alecto2"
+        "signal": "alecto1"
+    },
+    "$pairOptions": {
+        "rf.imitate": {
+            "svg": "./assets/svg/doorbell.svg"
+        },
+        "rf.test_button": {
+            "svg": "./assets/svg/doorbell.svg"
+        },
+        "rf.program": {
+            "svg": ".assets/svg/doorbell.pair.svg"
+        },
+        "test_button.2": {
+            "svg": "./assets/svg/doorbell.svg"
+        }
     }
 }
