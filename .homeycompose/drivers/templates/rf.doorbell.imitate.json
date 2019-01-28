@@ -1,0 +1,34 @@
+{
+  "class": "doorbell",
+  "capabilities": [
+    "alarm_generic"
+  ],
+  "pair": [
+    {
+      "$template": "rf.imitate",
+      "id": "rf.imitate",
+      "options": {
+        "title": "rf.pair.imitate.title.doorbell",
+        "body": "rf.pair.imitate.body.doorbell"
+      }
+    },
+    {
+      "$template": "rf.test_button",
+      "id": "rf.test_button",
+      "options": {
+        "title": "rf.pair.test.title.doorbell",
+        "body": "rf.pair.test.body.doorbell",
+        "svg": "./assets/svg/bell.svg",
+        "capability": "alarm_generic"
+      },
+      "navigation": {
+        "prev": "rf.imitate",
+        "next": "rf.done"
+      }
+    },
+    {
+      "$template": "rf.done",
+      "id": "rf.done"
+    }
+  ]
+}

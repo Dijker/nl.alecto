@@ -26,7 +26,7 @@
             "$template": "rf.test",
             "id": "rf.test",
             "options": {
-                "svg": "assets/svg/test.svg"
+                "svg": "assets/svg/alarm.svg"
             },
             "navigation": {
                 "prev": "rf.imitate",

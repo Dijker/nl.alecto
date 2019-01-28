@@ -1,6 +1,6 @@
 {
   "id": "nl.alecto",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "compatibility": ">=1.5.6",
   "sdk": 2,
   "category": "appliances",
@@ -24,6 +24,20 @@
   ],
   "flow": {
     "triggers": [
+      {
+        "id": "adb-11:received",
+        "title": {
+          "en": "Doorbell is pressed",
+          "nl": "Deurbel knop is ingedrukt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-11"
+          }
+        ]
+      },
       {
         "id": "adb-12:received",
         "title": {
@@ -83,6 +97,20 @@
     ],
     "actions": [
       {
+        "id": "adb-11:send",
+        "title": {
+          "en": "Trigger Doorbell",
+          "nl": "Laat deurbel afgaan"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=adb-11"
+          }
+        ]
+      },
+      {
         "id": "adb-12:send",
         "title": {
           "en": "Trigger Doorbell",
@@ -141,6 +169,50 @@
     ]
   },
   "drivers": [
+    {
+      "images": {
+        "large": "/drivers/adb-11/assets/images/large.jpg",
+        "small": "/drivers/adb-11/assets/images/small.jpg"
+      },
+      "icon": "/drivers/adb-11/assets/icon.svg",
+      "capabilities": [
+        "alarm_generic"
+      ],
+      "class": "doorbell",
+      "pair": [
+        {
+          "id": "rf.imitate",
+          "options": {
+            "title": "rf.pair.imitate.title.doorbell",
+            "body": "rf.pair.imitate.body.doorbell",
+            "svg": "./assets/svg/doorbell.svg"
+          }
+        },
+        {
+          "id": "rf.test_button",
+          "options": {
+            "title": "rf.pair.test.title.doorbell",
+            "body": "rf.pair.test.body.doorbell",
+            "svg": "./assets/svg/doorbell.svg",
+            "capability": "alarm_generic"
+          },
+          "navigation": {
+            "prev": "rf.imitate",
+            "next": "rf.done"
+          }
+        },
+        {
+          "id": "rf.done"
+        }
+      ],
+      "id": "adb-11",
+      "name": {
+        "en": "ADB-11"
+      },
+      "rf": {
+        "signal": "alecto1"
+      }
+    },
     {
       "images": {
         "large": "/drivers/adb-12/assets/images/large.jpg",
@@ -381,7 +453,7 @@
           "options": {
             "title": "rf.pair.program.title.build_in",
             "body": "rf.pair.program.body.doorbell",
-            "svg": ".assets/svg/doorbell.pair.svg"
+            "svg": "./assets/svg/doorbell.pair.svg"
           },
           "navigation": {
             "prev": "rf.choice"
@@ -392,7 +464,7 @@
           "options": {
             "title": "rf.pair.test.title.doorbell",
             "body": "rf.pair.test.body.doorbell_generated",
-            "svg": "./assets/svg/doorbell.svg",
+            "svg": "./assets/svg/doorbell.pair.svg",
             "capability": "alarm_generic"
           },
           "navigation": {
@@ -684,7 +756,7 @@
         {
           "id": "rf.test",
           "options": {
-            "svg": "assets/svg/test.svg"
+            "svg": "assets/svg/alarm.svg"
           },
           "navigation": {
             "prev": "rf.imitate",
