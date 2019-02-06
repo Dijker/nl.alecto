@@ -9,7 +9,8 @@
         "en": "ADB-12"
     },
     "rf": {
-        "signal": "alecto2"
+        "signal": "alecto2",
+        "sendToggleAfterTimeout": 4000
     },
     "settings": [
         {

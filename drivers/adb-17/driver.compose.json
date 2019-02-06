@@ -9,7 +9,8 @@
         "en": "ADB-17"
     },
     "rf": {
-        "signal": "alecto1"
+        "signal": "alecto1",
+        "sendToggleAfterTimeout": 4000
     },
     "$pairOptions": {
         "rf.imitate": {

@@ -210,7 +210,8 @@
         "en": "ADB-11"
       },
       "rf": {
-        "signal": "alecto1"
+        "signal": "alecto1",
+        "sendToggleAfterTimeout": 4000
       }
     },
     {
@@ -318,7 +319,8 @@
         "en": "ADB-12"
       },
       "rf": {
-        "signal": "alecto2"
+        "signal": "alecto2",
+        "sendToggleAfterTimeout": 4000
       },
       "settings": [
         {
@@ -481,7 +483,8 @@
         "en": "ADB-15"
       },
       "rf": {
-        "signal": "alecto1"
+        "signal": "alecto1",
+        "sendToggleAfterTimeout": 4000
       }
     },
     {
@@ -571,7 +574,8 @@
         "en": "ADB-17"
       },
       "rf": {
-        "signal": "alecto1"
+        "signal": "alecto1",
+        "sendToggleAfterTimeout": 4000
       }
     },
     {
@@ -677,7 +681,8 @@
         "en": "ADB-18"
       },
       "rf": {
-        "signal": "alecto2"
+        "signal": "alecto2",
+        "sendToggleAfterTimeout": 4000
       },
       "settings": [
         {

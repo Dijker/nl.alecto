@@ -9,7 +9,8 @@
         "en": "ADB-18"
     },
     "rf": {
-        "signal": "alecto2"
+        "signal": "alecto2",
+        "sendToggleAfterTimeout": 4000
     },
     "$pairOptions": {
       "rf.dipswitch": {
