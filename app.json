@@ -730,48 +730,6 @@
           ]
         }
       ]
-    },
-    {
-      "images": {
-        "large": "/drivers/sa-33/assets/images/large.jpg",
-        "small": "/drivers/sa-33/assets/images/small.jpg"
-      },
-      "icon": "/drivers/sa-33/assets/icon.svg",
-      "capabilities": [
-        "alarm_smoke"
-      ],
-      "class": "sensor",
-      "id": "sa-33",
-      "name": {
-        "en": "SA-33 Smoke detector",
-        "nl": "SA-33 Rookmelder"
-      },
-      "rf": {
-        "signal": "alecto_smoke_sensor"
-      },
-      "pair": [
-        {
-          "id": "rf.imitate",
-          "options": {
-            "svg": "assets/svg/pair.svg",
-            "title": "rf.pair.imitate.title.smokesensor",
-            "body": "rf.pair.imitate.body.smokesensor"
-          }
-        },
-        {
-          "id": "rf.test",
-          "options": {
-            "svg": "assets/svg/alarm.svg"
-          },
-          "navigation": {
-            "prev": "rf.imitate",
-            "next": "rf.done"
-          }
-        },
-        {
-          "id": "rf.done"
-        }
-      ]
     }
   ],
   "signals": {
