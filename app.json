@@ -1,6 +1,6 @@
 {
   "id": "nl.alecto",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "compatibility": ">=1.5.6",
   "sdk": 2,
   "category": "appliances",
@@ -185,7 +185,7 @@
           "options": {
             "title": "rf.pair.imitate.title.doorbell",
             "body": "rf.pair.imitate.body.doorbell",
-            "svg": "./assets/svg/doorbell.svg"
+            "svg": "./assets/svg/doorbell.pair.svg"
           }
         },
         {

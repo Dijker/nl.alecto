@@ -14,7 +14,7 @@
     },
     "$pairOptions": {
         "rf.imitate": {
-            "svg": "./assets/svg/doorbell.svg"
+            "svg": "./assets/svg/doorbell.pair.svg"
         },
         "rf.test_button": {
             "svg": "./assets/svg/doorbell.svg"
